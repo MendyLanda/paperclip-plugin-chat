@@ -54,19 +54,6 @@ const manifest: PaperclipPluginManifestV1 = {
     },
   },
 
-  launchers: [
-    {
-      id: "chat-nav",
-      displayName: "Chat",
-      description: "Open the AI chat page",
-      placementZone: "sidebar",
-      action: {
-        type: "navigate",
-        target: "plugins/paperclip-chat",
-      },
-    },
-  ],
-
   ui: {
     slots: [
       {
@@ -76,7 +63,7 @@ const manifest: PaperclipPluginManifestV1 = {
         exportName: "ChatPage",
       },
       {
-        type: "sidebarPanel",
+        type: "sidebar",
         id: "chat-sidebar",
         displayName: "Chat",
         exportName: "ChatSidebarPanel",

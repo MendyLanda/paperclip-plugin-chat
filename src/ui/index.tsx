@@ -1,4 +1,4 @@
-import type { PluginPageProps } from "@paperclipai/plugin-sdk/ui";
+import type { PluginPageProps, PluginSidebarProps } from "@paperclipai/plugin-sdk/ui";
 import { usePluginData, usePluginAction, useHostContext, usePluginStream } from "@paperclipai/plugin-sdk/ui";
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Markdown from "react-markdown";
@@ -1570,6 +1570,31 @@ export function ChatPage(_props: PluginPageProps) {
 // ChatSidebarPanel — compact sidebar entry point
 // ---------------------------------------------------------------------------
 
-export function ChatSidebarPanel() {
-  return null;
+export function ChatSidebarPanel({ context }: PluginSidebarProps) {
+  const href = context.companyPrefix
+    ? `/${context.companyPrefix}/plugins/paperclip-chat`
+    : `/plugins/paperclip-chat`;
+  const isActive =
+    typeof window !== "undefined" && window.location.pathname === href;
+  return (
+    <a
+      href={href}
+      aria-current={isActive ? "page" : undefined}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 10,
+        padding: "8px 12px",
+        fontSize: 13,
+        fontWeight: 500,
+        textDecoration: "none",
+        color: "inherit",
+        background: isActive ? "var(--accent, rgba(0,0,0,0.06))" : "transparent",
+        borderRadius: 6,
+      }}
+    >
+      <IconChat size={14} />
+      <span>Chat</span>
+    </a>
+  );
 }
