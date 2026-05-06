@@ -1,5 +1,5 @@
 {
-  "name": "@paperclipai/plugin-chat",
+  "name": "@mendypp/paperclip-plugin-chat",
   "version": "0.1.0",
   "description": "Multi-adapter AI chat plugin for Paperclip — supports Claude, Codex, and OpenCode",
   "type": "module",
@@ -15,8 +15,12 @@
     "clean": "rm -rf dist",
     "typecheck": "tsc --noEmit"
   },
+  "peerDependencies": {
+    "@paperclipai/plugin-sdk": "^2026.428.0",
+    "react": ">=18"
+  },
   "devDependencies": {
-    "@paperclipai/plugin-sdk": "file:../../../projects/paperclip/packages/plugins/sdk",
+    "@paperclipai/plugin-sdk": "^2026.428.0",
     "@types/node": "^24.6.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
@@ -25,8 +29,9 @@
     "react-dom": "^19.0.0",
     "typescript": "^5.7.3"
   },
-  "peerDependencies": {
-    "react": ">=18"
+  "dependencies": {
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
   },
   "files": [
     "dist",
@@ -35,10 +40,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/webprismdevin/paperclip-plugin-chat.git"
+    "url": "git+https://github.com/MendyLanda/paperclip-plugin-chat.git"
   },
-  "dependencies": {
-    "react-markdown": "^10.1.0",
-    "remark-gfm": "^4.0.1"
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }
