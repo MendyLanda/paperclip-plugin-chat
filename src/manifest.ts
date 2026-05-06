@@ -61,6 +61,7 @@ const manifest: PaperclipPluginManifestV1 = {
         id: "chat-page",
         displayName: "Chat",
         exportName: "ChatPage",
+        routePath: "chat",
       },
       {
         type: "sidebar",

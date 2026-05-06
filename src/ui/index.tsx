@@ -1572,8 +1572,8 @@ export function ChatPage(_props: PluginPageProps) {
 
 export function ChatSidebarPanel({ context }: PluginSidebarProps) {
   const href = context.companyPrefix
-    ? `/${context.companyPrefix}/plugins/paperclip-chat`
-    : `/plugins/paperclip-chat`;
+    ? `/${context.companyPrefix}/chat`
+    : `/chat`;
   const isActive =
     typeof window !== "undefined" && window.location.pathname === href;
   return (
