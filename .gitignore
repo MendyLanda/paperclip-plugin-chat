@@ -3,6 +3,7 @@ dist/
 .DS_Store
 *.log
 .worktrees/
+src/generated-version.ts
 
 # Secrets
 .env

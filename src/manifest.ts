@@ -1,7 +1,7 @@
 import type { PaperclipPluginManifestV1 } from "@paperclipai/plugin-sdk";
+import { PLUGIN_VERSION } from "./generated-version.js";
 
 export const PLUGIN_ID = "paperclip-chat";
-const PLUGIN_VERSION = "0.1.0";
 
 const manifest: PaperclipPluginManifestV1 = {
   id: PLUGIN_ID,
