@@ -16,8 +16,11 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           registry-url: 'https://registry.npmjs.org'
+
+      - name: Upgrade npm (OIDC publish requires npm >= 11.5.1)
+        run: npm install -g npm@latest
 
       - name: Install
         run: npm ci
@@ -36,5 +39,3 @@ jobs:
 
       - name: Publish
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
